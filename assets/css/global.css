@@ -1,3 +1,31 @@
-.foo {
-    display: flex
+body {
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "main   main   main"
+    "footer footer footer";
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+}
+
+header {
+  grid-area: header;
+  background-color: lightblue;
+}
+
+main {
+  grid-column: 2;
+  display: grid;
+  justify-content: center;
+  background-color: lightcoral;
+}
+
+.full-bleed {   
+  grid-column: 1 / 4;
+  width: 100%;
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightgreen;
 }

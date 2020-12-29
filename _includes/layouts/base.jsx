@@ -1,7 +1,7 @@
-export default ({ title, children }) => (
+export default ({ title, children, critical }) => (
   <html>
     <head>
-      <title>{ title }</title>
+      <title>{title}</title>
       <link rel="stylesheet" href="/assets/css/reset.css" />
       <link rel="stylesheet" href="/assets/css/global.css" />
       <link
@@ -12,12 +12,15 @@ export default ({ title, children }) => (
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.2.x/dist/typography.min.css"
       />
+      <style dangerouslySetInnerHTML={{ __html: critical }} />
     </head>
 
     <body>
-      <main class="prose">
+      <header></header>
+      <main className="prose">
         { children }
       </main>
+      <footer></footer>
     </body>
   </html>
 );
