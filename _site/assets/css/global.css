@@ -4,13 +4,50 @@ body {
     "header header header"
     "main   main   main"
     "footer footer footer";
-    grid-template-rows: 50px 1fr 50px;
-    grid-template-columns: 1fr min(65ch, 100%) 1fr;
+    grid-template-rows: 3.5rem 1fr 3.5rem;
+    grid-template-columns: 1fr min(65ch, calc(100% - 64px)) 1fr;
+    grid-gap: 2rem;
 }
 
 header {
   grid-area: header;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
   background-color: lightblue;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100ch, calc(100% - 2rem));
+  margin: 0 2rem;
+  background-color: lightgoldenrodyellow;
+}
+
+nav > ul {
+  list-style: none;
+  background-color:aquamarine;
+  margin: revert;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav > ul > li {
+  margin: 1rem 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-item {
+  text-decoration: none;
 }
 
 main {
@@ -18,6 +55,11 @@ main {
   display: grid;
   justify-content: center;
   background-color: lightcoral;
+}
+
+section > * {
+  display: flex;
+  justify-content: center;
 }
 
 .full-bleed {   
@@ -28,4 +70,11 @@ main {
 footer {
   grid-area: footer;
   background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prose h1, .prose p {
+  margin: 0 2rem;
 }

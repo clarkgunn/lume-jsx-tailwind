@@ -1,0 +1,1 @@
+export default () => <p>Made with &lt;3</p>;

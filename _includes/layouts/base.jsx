@@ -1,4 +1,7 @@
-export default ({ title, children, critical }) => (
+import Menu from '../nav/menu.jsx';
+import Footer from '../nav/footer.jsx';
+
+export default ({ title, critical, children, menu, debug }) => (
   <html>
     <head>
       <title>{title}</title>
@@ -16,11 +19,15 @@ export default ({ title, children, critical }) => (
     </head>
 
     <body>
-      <header></header>
+      <header>
+        <Menu logo={menu.logo} menu={menu.topNav}></Menu>
+      </header>
       <main className="prose">
-        { children }
+        {children}
       </main>
-      <footer></footer>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </body>
   </html>
 );
